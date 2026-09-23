@@ -1,0 +1,21 @@
+title: User's Manual
+home: /doc/manual/
+pages:
+  - { title: "Getting Started", url: /doc/manual/getting-started.html }
+  - { title: "The Interface", url: /doc/manual/interface.html }
+  - { title: "Projects and Files", url: /doc/manual/projects.html }
+  - { title: "Canvas and View", url: /doc/manual/canvas.html }
+  - { title: "Tools", url: /doc/manual/tools.html }
+  - { title: "Selecting and Transforming", url: /doc/manual/selection.html }
+  - { title: "Color and Palettes", url: /doc/manual/color.html }
+  - { title: "Layers", url: /doc/manual/layers.html }
+  - { title: "Timeline and Animation", url: /doc/manual/timeline.html }
+  - { title: "Onion Skin", url: /doc/manual/onion-skin.html }
+  - { title: "Camera", url: /doc/manual/camera.html }
+  - { title: "Sound", url: /doc/manual/sound.html }
+  - { title: "Importing and Exporting", url: /doc/manual/import-export.html }
+  - { title: "Preferences", url: /doc/manual/preferences.html }
+  - { title: "Keyboard Shortcuts", url: /doc/manual/shortcuts.html }
+  - { title: "Menu Reference", url: /doc/manual/menus.html }
+  - { title: "Command-Line Interface", url: /doc/manual/command-line.html }
+  - { title: "Glossary", url: /doc/manual/glossary.html }

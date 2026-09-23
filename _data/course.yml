@@ -1,0 +1,14 @@
+title: Classroom Course
+home: /doc/course/
+pages:
+  - { title: "Teacher's Guide", url: /doc/course/ }
+  - { title: "Lesson 1: Meet Pencil2D", url: /doc/course/lesson-01.html }
+  - { title: "Lesson 2: The Bouncing Ball", url: /doc/course/lesson-02.html }
+  - { title: "Lesson 3: Squash, Stretch and Easing", url: /doc/course/lesson-03.html }
+  - { title: "Lesson 4: Layers, Line and Color", url: /doc/course/lesson-04.html }
+  - { title: "Lesson 5: The Flour Sack Jump", url: /doc/course/lesson-05.html }
+  - { title: "Lesson 6: Camera Moves", url: /doc/course/lesson-06.html }
+  - { title: "Lesson 7: The Walk Cycle", url: /doc/course/lesson-07.html }
+  - { title: "Lesson 8: Sound and Lip Sync", url: /doc/course/lesson-08.html }
+  - { title: "Lesson 9: Final Project", url: /doc/course/lesson-09.html }
+  - { title: "Quick Reference", url: /doc/course/quick-reference.html }

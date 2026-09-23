@@ -5,6 +5,8 @@ comments: true
 tagline: Learn how to use & animate with Pencil2D!
 ---
 
+> **New:** Looking for a structured, step-by-step course? The [Classroom Course]({{ '/doc/course/' | relative_url }}) has nine lessons with teacher notes, from your first flipbook to a finished short film. For how every tool and panel works, see the [User's Manual]({{ '/doc/manual/' | relative_url }}).
+
 > If you have a specific tutorial you'd like to be made, let us know in the comments so we can review it.
 > I'f you would like to contribute a tutorial of your own, point us to it so we can feature it.
 

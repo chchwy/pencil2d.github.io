@@ -1,0 +1,13 @@
+{%- assign series = include.series -%}
+{%- assign idx = -1 -%}
+{%- for item in series.pages -%}{%- if item.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+<nav class="series-nav" aria-label="{{ series.title }}">
+{%- if idx > 0 -%}{%- assign p = idx | minus: 1 -%}{%- assign prev = series.pages[p] -%}
+<a class="series-prev" href="{{ prev.url | relative_url }}">&larr; {{ prev.title }}</a>
+{%- else -%}<span class="series-prev"></span>{%- endif %}
+<a class="series-home" href="{{ series.home | relative_url }}">{{ series.title }}</a>
+{%- assign n = idx | plus: 1 -%}
+{%- if n < series.pages.size -%}{%- assign next = series.pages[n] -%}
+<a class="series-next" href="{{ next.url | relative_url }}">{{ next.title }} &rarr;</a>
+{%- else -%}<span class="series-next"></span>{%- endif %}
+</nav>

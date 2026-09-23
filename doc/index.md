@@ -5,7 +5,8 @@ tagline: Getting Started with Pencil2D
 redirect_from: /documentation/
 tutorial_link: "/doc/tutorials.html"
 faq_link: "/doc/faq.html"
-user_manual_link: "/doc/user-manual.html"
+user_manual_link: "/doc/manual/"
+course_link: "/doc/course/"
 ---
 
 > We are looking for community's support to help improve the documentation. Pencil2D cannot grow and attract more users without you. [Join us](https://discuss.pencil2d.org/t/help-wanted-user-documentation/2565)!
@@ -33,11 +34,19 @@ user_manual_link: "/doc/user-manual.html"
   </div>
 
   <div class="doc-tile">
+    <a href="{{ page.course_link | relative_url }}">
+      {% include icon-course.svg %}
+    </a>
+    <a href="{{ page.course_link | relative_url }}"><h2 class="doc-title">Classroom Course</h2></a>
+    Nine ready-to-teach lessons for teachers and self-learners
+  </div>
+
+  <div class="doc-tile">
     <a href="{{ page.user_manual_link | relative_url }}">
       {% include iconmonstr-book-11.svg %}
     </a>
     <a href="{{ page.user_manual_link | relative_url }}"><h2 class="doc-title">User's Manual</h2></a>
-    Walk you through the basics of using Pencil2D
+    Every tool, panel, menu and setting, explained
   </div>
 
 </div>
