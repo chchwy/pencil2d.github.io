@@ -1,6 +1,7 @@
 {%- assign series = include.series -%}
 {%- assign idx = -1 -%}
-{%- for item in series.pages -%}{%- if item.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign here = page.url | remove: '.html' -%}
+{%- for item in series.pages -%}{%- assign there = item.url | remove: '.html' -%}{%- if there == here -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
 <nav class="series-nav" aria-label="{{ series.title }}">
 {%- if idx > 0 -%}{%- assign p = idx | minus: 1 -%}{%- assign prev = series.pages[p] -%}
 <a class="series-prev" href="{{ prev.url | relative_url }}">&larr; {{ prev.title }}</a>
