@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article>
+
+  <div>
+    {{ .Content }}
+<ul class="post-list">
+{{- range partial "posts.html" . }}
+    <li>
+
+    <span class="post-meta">{{ .Date.Format site.Params.dateFormat }}</span>
+
+    <h2>
+        <a class="post-link" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+    </h2>
+
+    <span>{{ partial "excerpt.html" (dict "page" . "words" 70) }}</span>
+
+    </li>
+{{- end }}
+</ul>
+  </div>
+
+</article>
+{{ end }}

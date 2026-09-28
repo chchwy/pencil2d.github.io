@@ -1,0 +1,51 @@
+---
+layout: post
+title: "Pencil2D v0.7.0 RC1 is now available for testing!"
+tagline: "Calling all users, new release incoming!"
+categories: "News"
+author: "The Pencil2D Team"
+date: "2024-06-19"
+comments: false
+slug: pencil2d-0.7.0-rc1-release
+---
+
+> TL;DR: We need your help testing the upcoming Pencil2D release! Download the release candidate version from the links below and let us know if you find any issues.
+
+## Calling All Users! v0.7.0 RC Ahoy!
+
+Since the last stable Pencil2D release, we’ve been hard at [work behind-the-scenes](/2024/05/icon-redesign.html) to make Pencil2D better. If you’ve tried out our [nightly builds][nightly] at some point you’ve had a small taste of that work, but now we are on the verge of a new release and we need your help!
+
+Right now we are testing what will likely become v0.7.0 of Pencil2D, and it would help us out a lot if as many of our wonderful users as possible could give this version a try!
+
+This release candidate contains a whole lot of bug fixes and new features, the full list of which will be shared during the final release of v0.7.0. The purpose of this brief testing period is to make sure that there aren’t any major issues that we've missed.
+
+The more people we get to test this release candidate, the more confident we can be that the final release will provide the best experience possible for all our users. We hope to make the new release official within the next couple of weeks.
+
+## Download the Release Candidate
+
+Help us test the upcoming release by downloading it from the links below:
+
+- [Windows 7+ 64-Bit](https://github.com/pencil2d/pencil/releases/download/v0.7.0-rc1/pencil2d-win64-0.7.0-rc1.zip)
+- [Windows 7+ 32-bit](https://github.com/pencil2d/pencil/releases/download/v0.7.0-rc1/pencil2d-win32-0.7.0-rc1.zip)
+- [macOS 10.13+](https://github.com/pencil2d/pencil/releases/download/v0.7.0-rc1/pencil2d-mac-0.7.0-rc1.zip)
+- [Linux amd64 AppImage](https://github.com/pencil2d/pencil/releases/download/v0.7.0-rc1/pencil2d-linux-amd64-0.7.0-rc1.AppImage)
+- [Linux i386 AppImage](https://github.com/pencil2d/pencil/releases/download/v0.7.0-rc1/pencil2d-linux-i386-0.7.0-rc1.AppImage)
+- For other platforms, you will have to wait for the official release.
+
+### Notes on compatibility
+
+You can have multiple versions of Pencil2D installed on your computer, but please do not have multiple versions running at the same time. Projects created with older versions of Pencil2D can be opened in this version, and vice versa. **Making backups** of your projects is always recommended.
+
+## Feedback
+
+Thank you for taking the time to read this, and a big thank you to everyone who has helped test the [nightly builds][nightly] or will help test this release candidate. Pencil2D is created and maintained by a very small group of volunteers and it would be impossible for us to thoroughly test it without the help of our community.
+
+If you have any questions about this new release, there are multiple channels you can reach us through. Either our [Discord server][discord] or our [forums][forums] are good places to bring up any questions and share feedback from testing.
+
+On our Discord server, please use the `#help-me` channel for questions and the `#bug-discussion` channel for testing feedback. On our forums, tag your posts with the `release-candidate` tag and place them in the `Installing Pencil2D/How to` category for questions and the `Bug Reports` category for feedback.
+
+Also keep an eye on the `#general` channel in Discord as we will be holding an animation challenge there shortly to promote the upcoming release and may have other things in the works as well 😉
+
+[nightly]: https://www.pencil2d.org/download/nightly/
+[discord]: https://discord.gg/8FxdV2g
+[forums]: https://discuss.pencil2d.org/

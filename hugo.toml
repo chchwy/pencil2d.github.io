@@ -1,0 +1,57 @@
+baseURL = "https://www.pencil2d.org/"
+locale = "en-US"
+title = "Pencil2D Animation"
+timeZone = "UTC"
+
+# Keep Jekyll's URLs: /doc/faq.html rather than /doc/faq/
+uglyURLs = true
+disablePathToLower = true
+enableEmoji = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[permalinks.page]
+posts = "/:year/:month/:slug"
+
+[params]
+tagline = "Open Source animation software"
+description = "An easy, intuitive tool to make 2D hand-drawn animations."
+author = "The Pencil2D Team"
+image = "/images/pencil_icon.png"
+dateFormat = "2 January, 2006"
+googleAnalytics = "UA-5266256-7"
+twitter = "pencil2d"
+facebookPublisher = "1379437495650288"
+githubOwnerURL = "https://github.com/pencil2d/pencil"
+githubOwnerName = "pencil2d"
+bitbucketURL = "https://bitbucket.org/chchwy/pencil2d"
+# The release announcement the home page's "What's New?" button points at
+whatsNew = "/posts/pencil2d-0.7.2-release"
+
+[markup.goldmark.renderer]
+unsafe = true            # pages mix raw HTML into Markdown, as kramdown allowed
+
+[markup.goldmark.parser]
+autoHeadingIDType = "github"   # same anchors as kramdown's GFM parser
+
+[markup.goldmark.parser.attribute]
+block = true             # {style="..."} after a paragraph, like kramdown's {: ...}
+
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 6
+
+[markup.highlight]
+noClasses = false
+
+[sitemap]
+changeFreq = ""
+priority = -1
+
+# The posts section exists only to hold the posts; there is no /posts/ page.
+[[cascade]]
+[cascade.build]
+render = "never"
+list = "local"
+[cascade.target]
+kind = "section"
+path = "/posts"

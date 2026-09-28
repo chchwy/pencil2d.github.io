@@ -1,0 +1,21 @@
+{{- /*
+  Jekyll's post excerpt as plain text: the Markdown up to the post's excerpt_separator
+  (default: the first blank line), rendered, then stripped of HTML. With "words", cut to
+  that many words and add "..." the way Liquid's truncatewords does.
+
+  Like Jekyll, the separator is matched literally, so a CRLF file has no "\n\n" and its
+  excerpt is the whole post; and reference-style link definitions from the rest of the
+  post are appended so [text][0] links in the excerpt still resolve.
+*/ -}}
+{{- $p := .page -}}
+{{- $raw := $p.RawContent | strings.TrimLeft "\r\n" -}}
+{{- $sep := $p.Params.excerpt_separator | default "\n\n" -}}
+{{- $md := index (split $raw $sep) 0 -}}
+{{- $refs := findRE `(?m)^ {0,3}\[[^\]]+\]:[ \t]*\S.*$` $raw -}}
+{{- with $refs }}{{ $md = printf "%s\n\n%s" $md (delimit . "\n") }}{{ end -}}
+{{- $text := $md | $p.RenderString | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+{{- with .words -}}
+  {{- $w := split $text " " -}}
+  {{- if gt (len $w) . -}}{{- $text = printf "%s..." (delimit (first . $w) " ") -}}{{- end -}}
+{{- end -}}
+{{- return $text -}}

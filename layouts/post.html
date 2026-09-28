@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div itemprop="articleBody" class="post-content">
+    {{ .Content }}
+  </div>
+
+  {{ if eq .Params.comments true }}{{ partial "comments.html" . }}{{ end }}
+</article>
+{{ end }}

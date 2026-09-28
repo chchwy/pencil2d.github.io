@@ -1,0 +1,17 @@
+{{- /* Prev / home / next links for a page in a series listed in data/<name>.yml. */ -}}
+{{- $series := index hugo.Data (.Get 0) -}}
+{{- $here := .Page.RelPermalink | strings.TrimSuffix ".html" | strings.TrimSuffix "index" -}}
+{{- $idx := -1 -}}
+{{- range $i, $item := $series.pages -}}
+  {{- if eq (strings.TrimSuffix ".html" $item.url) $here }}{{ $idx = $i }}{{ end -}}
+{{- end -}}
+<nav class="series-nav" aria-label="{{ $series.title }}">
+{{- if gt $idx 0 -}}{{- $prev := index $series.pages (sub $idx 1) }}
+<a class="series-prev" href="{{ $prev.url }}">&larr; {{ $prev.title }}</a>
+{{- else -}}<span class="series-prev"></span>{{- end }}
+<a class="series-home" href="{{ $series.home }}">{{ $series.title }}</a>
+{{- $n := add $idx 1 -}}
+{{- if lt $n (len $series.pages) -}}{{- $next := index $series.pages $n }}
+<a class="series-next" href="{{ $next.url }}">{{ $next.title }} &rarr;</a>
+{{- else -}}<span class="series-next"></span>{{- end }}
+</nav>

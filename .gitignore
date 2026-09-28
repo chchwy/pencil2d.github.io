@@ -1,6 +1,4 @@
-_site
-.jekyll-cache
-.sass-cache
-.bundle
-Gemfile.lock
-*.gem
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock

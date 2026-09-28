@@ -1,0 +1,11 @@
+{{- /*
+  Stands in for kramdown's {:toc}: same wrapper and list id, so mystyle.css still applies.
+  Like kramdown, the list starts at the page's top heading level (h1 on some older pages).
+*/ -}}
+{{- $top := 6 -}}
+{{- range .Page.Fragments.HeadingsMap }}{{ $top = math.Min $top .Level }}{{ end -}}
+{{- $toc := string (.Page.Fragments.ToHTML (int $top) 6 false) -}}
+{{- $toc = $toc | replaceRE `(?s)^\s*<nav id="TableOfContents">\s*(.*?)\s*</nav>\s*$` "$1" | replaceRE `^<ul>` `<ul id="markdown-toc">` -}}
+<nav class="toc">
+{{ $toc | safeHTML }}
+</nav>

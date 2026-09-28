@@ -1,0 +1,2 @@
+{{- /* All published posts, newest first (Jekyll's site.posts). */ -}}
+{{- return (where site.RegularPages "Section" "posts").ByDate.Reverse -}}

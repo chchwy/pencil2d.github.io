@@ -1,0 +1,2 @@
+{{- /* Inline an SVG from assets/icons/. */ -}}
+{{- (resources.Get (printf "icons/%s" (.Get 0))).Content | safeHTML -}}
