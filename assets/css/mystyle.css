@@ -310,3 +310,17 @@ kbd {
     border-radius: 6px;
     font-size: 0.9rem;
 }
+
+/* Language menu in the header */
+.site-nav .lang-globe svg {
+    vertical-align: -3px;
+}
+.site-nav .lang-menu .dropdown-content {
+    right: 0;
+}
+/* Spanish menu labels are longer; tighten the gaps so the menu stays beside the title */
+@media screen and (min-width: 609px) {
+    html[lang="es"] .site-nav .page-link:not(:last-child) {
+        margin-right: 14px;
+    }
+}

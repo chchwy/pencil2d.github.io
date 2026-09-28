@@ -37,6 +37,9 @@ other = "More News..."
 [home_showreel]
 other = "User Showreel"
 
+[language]
+other = "Language"
+
 [toc_label]
 other = "On this page"
 [series_manual]

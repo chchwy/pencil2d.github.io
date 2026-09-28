@@ -1,0 +1,62 @@
+# Textos de la interfaz (español). El contenido de las páginas se traduce aparte, en content-es/.
+
+[nav_download]
+other = "Descargar"
+[nav_community]
+other = "Comunidad"
+[nav_forum]
+other = "Foro"
+[nav_news]
+other = "Noticias"
+[nav_docs]
+other = "Ayuda"
+[nav_tutorials]
+other = "Tutoriales"
+[nav_faq]
+other = "Preguntas frecuentes"
+[nav_manual]
+other = "Manual de usuario"
+[nav_contribute]
+other = "Colaborar"
+
+[logo_alt]
+other = "Icono de Pencil2D"
+[valentines]
+other = "¡Feliz día de San Valentín!"
+
+[home_download]
+other = "¡Descárgalo ya!"
+[home_tutorials]
+other = "Tutoriales"
+[home_whats_new]
+other = "¿Qué hay de nuevo?"
+[home_latest_news]
+other = "Últimas noticias"
+[home_more_news]
+other = "Más noticias..."
+[home_showreel]
+other = "Showreel de usuarios"
+
+[language]
+other = "Idioma"
+
+[toc_label]
+other = "En esta página"
+[series_manual]
+other = "Manual de usuario"
+[series_course]
+other = "Curso para el aula"
+
+[untranslated]
+other = "Esta página aún no está traducida al español. A continuación se muestra el texto original en inglés."
+
+[footer_github]
+other = "GitHub de {{ .Owner }}"
+[footer_bitbucket]
+other = "Bitbucket de {{ .Owner }}"
+[footer_twitter]
+other = "Twitter de {{ .Owner }}"
+[footer_contact]
+other = "Contacto"
+[footer_contact_title]
+other = "Contactar con {{ .Owner }}"

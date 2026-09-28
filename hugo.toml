@@ -40,8 +40,20 @@ dateFormat = "2 January, 2006"
 ogLocale = "en_US"
 htmlLang = "en"
 
-[languages.zh]
+[languages.es]
 weight = 2
+locale = "es"
+label = "Español"
+title = "Pencil2D Animation"
+[languages.es.params]
+tagline = "Software de animación de código abierto"
+description = "Una herramienta sencilla e intuitiva para crear animaciones 2D dibujadas a mano."
+dateFormat = "2 de January de 2006"
+ogLocale = "es_ES"
+htmlLang = "es"
+
+[languages.zh]
+weight = 3
 locale = "zh-TW"
 label = "中文"
 title = "Pencil2D Animation"
@@ -56,6 +68,11 @@ htmlLang = "zh-Hant-TW"
 # content-<lang>/ and replaces the English page for that language; any page not
 # translated yet is served from content/ in English, with the interface translated.
 # The more specific mount wins, so a file in content-zh/ replaces its English original.
+[[module.mounts]]
+source = "content-es"
+target = "content"
+[module.mounts.sites.matrix]
+languages = ["es"]
 [[module.mounts]]
 source = "content-zh"
 target = "content"
