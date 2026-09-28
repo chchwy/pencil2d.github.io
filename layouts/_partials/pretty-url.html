@@ -1,0 +1,12 @@
+{{- /*
+  The URL Jekyll reported for a page: posts keep ".html", other pages drop it
+  (/doc/faq), and section pages end in "/". GitHub Pages serves all three forms.
+  Used for canonical links, the sitemap and redirects.
+*/ -}}
+{{- $u := .Permalink -}}
+{{- if .Params.url -}}
+  {{- /* an explicit url (404.html) is used as written */ -}}
+{{- else if ne .Section "posts" -}}
+  {{- $u = $u | strings.TrimSuffix ".html" | strings.TrimSuffix "index" -}}
+{{- end -}}
+{{- return $u -}}

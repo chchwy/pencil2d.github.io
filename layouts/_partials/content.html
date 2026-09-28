@@ -1,0 +1,13 @@
+{{- /*
+  The page content. Pages link to each other with site-absolute paths ("/doc/faq.html");
+  outside the default language those are pointed at the same language ("/zh/doc/faq.html"),
+  leaving images and other files alone. Covers raw HTML in the content as well as Markdown.
+*/ -}}
+{{- $c := string .Content -}}
+{{- with site.LanguagePrefix -}}
+  {{- $c = $c | replaceRE `href="/"` (printf `href="%s/"` .) -}}
+  {{- $c = $c | replaceRE `href="/([^/"][^"]*)"` (printf `href="%s/$1"` .) -}}
+  {{- $re := printf `href="%s/((?:images|assets|doc/images)/[^"]*|[^"#?]*\.(?:png|jpe?g|gif|svg|webp|mp4|webm|mov|zip|dmg|AppImage|pdf|js|css|xml|txt|ico|json)(?:[?#][^"]*)?)"` . -}}
+  {{- $c = $c | replaceRE $re `href="/$1"` -}}
+{{- end -}}
+{{- return ($c | safeHTML) -}}

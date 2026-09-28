@@ -1,0 +1,8 @@
+{{- /*
+  Whether this page's content is in the page's language: always for the default language,
+  and for another language only when the page comes from content-<lang>/ rather than being
+  the English original shown with that language's interface.
+*/ -}}
+{{- $ok := eq .Language.Name hugo.Sites.Default.Language.Name -}}
+{{- if not $ok }}{{ with .File }}{{ $ok = strings.Contains .Filename (printf "/content-%s/" $.Language.Name) }}{{ end }}{{ end -}}
+{{- return $ok -}}

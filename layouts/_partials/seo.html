@@ -16,10 +16,22 @@
 <meta name="generator" content="Hugo {{ hugo.Version }}" />
 <meta property="og:title" content="{{ $title }}" />
 <meta name="author" content="{{ $author }}" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="{{ site.Params.ogLocale }}" />
 <meta name="description" content="{{ $desc }}" />
 <meta property="og:description" content="{{ $desc }}" />
 <link rel="canonical" href="{{ $url }}" />
+{{- /* hreflang alternates, only between real translations */}}
+{{- $versions := where .AllTranslations "Language.Name" "ne" "" }}
+{{- $real := slice }}
+{{- range $versions }}{{ if partial "translated.html" . }}{{ $real = $real | append . }}{{ end }}{{ end }}
+{{- if gt (len $real) 1 }}
+{{- range $real }}
+<link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ partial "pretty-url.html" . }}" />
+{{- end }}
+{{- with where $real "Language.Name" hugo.Sites.Default.Language.Name }}
+<link rel="alternate" hreflang="x-default" href="{{ partial "pretty-url.html" (index . 0) }}" />
+{{- end }}
+{{- end }}
 <meta property="og:url" content="{{ $url }}" />
 <meta property="og:site_name" content="{{ site.Title }}" />
 <meta property="og:image" content="{{ $image }}" />

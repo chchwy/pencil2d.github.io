@@ -1,7 +1,11 @@
 baseURL = "https://www.pencil2d.org/"
-locale = "en-US"
-title = "Pencil2D Animation"
 timeZone = "UTC"
+
+# English stays at the site root, so every existing URL keeps working;
+# other languages live under /<lang>/.
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+disableDefaultLanguageRedirect = true
 
 # Keep Jekyll's URLs: /doc/faq.html rather than /doc/faq/
 uglyURLs = true
@@ -13,11 +17,8 @@ disableKinds = ["taxonomy", "term", "rss"]
 posts = "/:year/:month/:slug"
 
 [params]
-tagline = "Open Source animation software"
-description = "An easy, intuitive tool to make 2D hand-drawn animations."
 author = "The Pencil2D Team"
 image = "/images/pencil_icon.png"
-dateFormat = "2 January, 2006"
 googleAnalytics = "UA-5266256-7"
 twitter = "pencil2d"
 facebookPublisher = "1379437495650288"
@@ -27,8 +28,54 @@ bitbucketURL = "https://bitbucket.org/chchwy/pencil2d"
 # The release announcement the home page's "What's New?" button points at
 whatsNew = "/posts/pencil2d-0.7.2-release"
 
+[languages.en]
+weight = 1
+locale = "en-US"
+label = "English"
+title = "Pencil2D Animation"
+[languages.en.params]
+tagline = "Open Source animation software"
+description = "An easy, intuitive tool to make 2D hand-drawn animations."
+dateFormat = "2 January, 2006"
+ogLocale = "en_US"
+htmlLang = "en"
+
+[languages.zh]
+weight = 2
+locale = "zh-TW"
+label = "中文"
+title = "Pencil2D Animation"
+[languages.zh.params]
+tagline = "開源的 2D 動畫軟體"
+description = "簡單直覺的 2D 手繪動畫軟體。"
+dateFormat = "2006 年 1 月 2 日"
+ogLocale = "zh_TW"
+htmlLang = "zh-Hant-TW"
+
+# Content: content/ is English. A translation goes at the same path under
+# content-<lang>/ and replaces the English page for that language; any page not
+# translated yet is served from content/ in English, with the interface translated.
+# The more specific mount wins, so a file in content-zh/ replaces its English original.
+[[module.mounts]]
+source = "content-zh"
+target = "content"
+[module.mounts.sites.matrix]
+languages = ["zh"]
+[[module.mounts]]
+source = "content"
+target = "content"
+[module.mounts.sites.matrix]
+languages = ["**"]
+
 [markup.goldmark.renderer]
 unsafe = true            # pages mix raw HTML into Markdown, as kramdown allowed
+
+# Hugo turns on its own link/image hooks for multilingual sites; they rewrite even
+# "#anchor" links. layouts/_partials/content.html handles language links instead.
+[markup.goldmark.renderHooks.link]
+useEmbedded = "never"
+[markup.goldmark.renderHooks.image]
+useEmbedded = "never"
 
 [markup.goldmark.parser]
 autoHeadingIDType = "github"   # same anchors as kramdown's GFM parser

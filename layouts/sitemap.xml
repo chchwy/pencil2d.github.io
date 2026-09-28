@@ -1,9 +1,10 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" | safeHTML }}
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {{- range .Pages }}
-{{- if and (ne .Kind "404") (ne .RelPermalink "/404.html") }}
+{{- /* Untranslated pages point their canonical link at the English page, so leave them out. */}}
+{{- if and (ne .Kind "404") (ne .RelPermalink "/404.html") (partial "translated.html" .) }}
 <url>
-<loc>{{ partial "canonical.html" . }}</loc>
+<loc>{{ partial "pretty-url.html" . }}</loc>
 {{- if eq .Section "posts" }}
 <lastmod>{{ .Date.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
 {{- end }}

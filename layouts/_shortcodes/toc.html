@@ -6,6 +6,6 @@
 {{- range .Page.Fragments.HeadingsMap }}{{ $top = math.Min $top .Level }}{{ end -}}
 {{- $toc := string (.Page.Fragments.ToHTML (int $top) 6 false) -}}
 {{- $toc = $toc | replaceRE `(?s)^\s*<nav id="TableOfContents">\s*(.*?)\s*</nav>\s*$` "$1" | replaceRE `^<ul>` `<ul id="markdown-toc">` -}}
-<nav class="toc">
+<nav class="toc" data-label="{{ T "toc_label" }}">
 {{ $toc | safeHTML }}
 </nav>

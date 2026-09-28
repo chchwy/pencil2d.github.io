@@ -1,0 +1,60 @@
+# Interface strings. Page content is translated separately, under content-<lang>/.
+
+[nav_download]
+other = "Download"
+[nav_community]
+other = "Community"
+[nav_forum]
+other = "Forum"
+[nav_news]
+other = "News"
+[nav_docs]
+other = "Docs"
+[nav_tutorials]
+other = "Tutorials"
+[nav_faq]
+other = "FAQ"
+[nav_manual]
+other = "User's Manual"
+[nav_contribute]
+other = "Contribute"
+
+[logo_alt]
+other = "Pencil2D Icon"
+[valentines]
+other = "Happy Valentine's Day"
+
+[home_download]
+other = "Download now!"
+[home_tutorials]
+other = "Tutorials"
+[home_whats_new]
+other = "What's New?"
+[home_latest_news]
+other = "Latest News"
+[home_more_news]
+other = "More News..."
+[home_showreel]
+other = "User Showreel"
+
+[toc_label]
+other = "On this page"
+[series_manual]
+other = "User's Manual"
+[series_course]
+other = "Classroom Course"
+
+# Shown above a page that has no translation yet (never in English).
+[untranslated]
+other = ""
+
+[footer_github]
+other = "{{ .Owner }}'s GitHub"
+[footer_bitbucket]
+other = "{{ .Owner }}'s Bitbucket"
+[footer_twitter]
+other = "{{ .Owner }}'s Twitter"
+[footer_contact]
+other = "Contact"
+[footer_contact_title]
+other = "Contact {{ .Owner }}"

@@ -126,7 +126,7 @@
     line-height: 1.4;
 }
 .toc::before {
-    content: "On this page";
+    content: attr(data-label);
     display: block;
     margin-bottom: 0.6rem;
     font-size: 0.75rem;
@@ -300,4 +300,13 @@ kbd {
 }
 @media screen and (min-width: 64em) {
     .doc-tile { width: 23%; margin-right: 2%; }
+}
+
+/* Above a page that is shown in English under another language's interface */
+.untranslated-notice {
+    padding: 0.5rem 0.75rem;
+    background: #fff8c5;
+    border: 1px solid #eac54f;
+    border-radius: 6px;
+    font-size: 0.9rem;
 }

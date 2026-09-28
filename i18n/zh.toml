@@ -1,0 +1,59 @@
+# 介面字串（繁體中文）。頁面內文另外翻譯，放在 content-zh/。
+
+[nav_download]
+other = "下載"
+[nav_community]
+other = "社群"
+[nav_forum]
+other = "論壇"
+[nav_news]
+other = "最新消息"
+[nav_docs]
+other = "文件"
+[nav_tutorials]
+other = "教學影片"
+[nav_faq]
+other = "常見問題"
+[nav_manual]
+other = "使用手冊"
+[nav_contribute]
+other = "參與貢獻"
+
+[logo_alt]
+other = "Pencil2D 圖示"
+[valentines]
+other = "情人節快樂"
+
+[home_download]
+other = "立即下載"
+[home_tutorials]
+other = "教學影片"
+[home_whats_new]
+other = "新版特色"
+[home_latest_news]
+other = "最新消息"
+[home_more_news]
+other = "更多消息…"
+[home_showreel]
+other = "使用者作品精選"
+
+[toc_label]
+other = "本頁內容"
+[series_manual]
+other = "使用手冊"
+[series_course]
+other = "課堂教學課程"
+
+[untranslated]
+other = "這一頁還沒有中文翻譯，以下是英文原文。"
+
+[footer_github]
+other = "{{ .Owner }} 的 GitHub"
+[footer_bitbucket]
+other = "{{ .Owner }} 的 Bitbucket"
+[footer_twitter]
+other = "{{ .Owner }} 的 Twitter"
+[footer_contact]
+other = "聯絡我們"
+[footer_contact_title]
+other = "聯絡 {{ .Owner }}"

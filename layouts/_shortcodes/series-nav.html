@@ -1,17 +1,30 @@
-{{- /* Prev / home / next links for a page in a series listed in data/<name>.yml. */ -}}
-{{- $series := index hugo.Data (.Get 0) -}}
-{{- $here := .Page.RelPermalink | strings.TrimSuffix ".html" | strings.TrimSuffix "index" -}}
+{{- /*
+  Prev / home / next links for a page in a series listed in data/<name>.yml. Titles come
+  from the pages themselves, so a translated page shows its translated title. The links
+  stay site-absolute; _partials/content.html points them at the page's language.
+*/ -}}
+{{- $name := .Get 0 -}}
+{{- $series := index hugo.Data $name -}}
+{{- $here := .Page.RelPermalink | strings.TrimPrefix site.LanguagePrefix | strings.TrimSuffix ".html" | strings.TrimSuffix "index" -}}
+{{- $items := slice -}}
+{{- range $series.pages -}}
+  {{- $path := .url | strings.TrimSuffix ".html" | strings.TrimSuffix "/" -}}
+  {{- $title := .title -}}
+  {{- with site.GetPage $path }}{{ $title = .LinkTitle }}{{ end -}}
+  {{- $items = $items | append (dict "url" .url "title" $title) -}}
+{{- end -}}
 {{- $idx := -1 -}}
-{{- range $i, $item := $series.pages -}}
+{{- range $i, $item := $items -}}
   {{- if eq (strings.TrimSuffix ".html" $item.url) $here }}{{ $idx = $i }}{{ end -}}
 {{- end -}}
-<nav class="series-nav" aria-label="{{ $series.title }}">
-{{- if gt $idx 0 -}}{{- $prev := index $series.pages (sub $idx 1) }}
+{{- $label := T (printf "series_%s" $name) | default $series.title -}}
+<nav class="series-nav" aria-label="{{ $label }}">
+{{- if gt $idx 0 -}}{{- $prev := index $items (sub $idx 1) }}
 <a class="series-prev" href="{{ $prev.url }}">&larr; {{ $prev.title }}</a>
 {{- else -}}<span class="series-prev"></span>{{- end }}
-<a class="series-home" href="{{ $series.home }}">{{ $series.title }}</a>
+<a class="series-home" href="{{ $series.home }}">{{ $label }}</a>
 {{- $n := add $idx 1 -}}
-{{- if lt $n (len $series.pages) -}}{{- $next := index $series.pages $n }}
+{{- if lt $n (len $items) -}}{{- $next := index $items $n }}
 <a class="series-next" href="{{ $next.url }}">{{ $next.title }} &rarr;</a>
 {{- else -}}<span class="series-next"></span>{{- end }}
 </nav>

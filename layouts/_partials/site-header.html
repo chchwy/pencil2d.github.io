@@ -3,11 +3,11 @@
   <div class="wrapper">
     {{- /* The Valentine's icon depends on the build date, as it did under Jekyll. */}}
     {{- if eq (now.Format "01 02") "02 14" }}
-      <img src="/images/pencil_icon_valentines.png" style="float:left; width:54px; margin-right: 10px;" title="Happy Valentine's Day" alt="Pencil2D Icon">
+      <img src="/images/pencil_icon_valentines.png" style="float:left; width:54px; margin-right: 10px;" title="{{ T "valentines" }}" alt="{{ T "logo_alt" }}">
     {{- else }}
-      <img src="/images/pencil_icon.png" style="float:left; width:54px; margin-right: 10px;" alt="Pencil2D Icon">
+      <img src="/images/pencil_icon.png" style="float:left; width:54px; margin-right: 10px;" alt="{{ T "logo_alt" }}">
     {{- end }}
-      <a class="site-title" href="/">{{ site.Title }}</a>
+      <a class="site-title" href="{{ "/" | relLangURL }}">{{ site.Title }}</a>
 
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -22,28 +22,32 @@
         </label>
 
         <div class="trigger">
-          <a class="page-link" href="/download">Download</a>
+          <a class="page-link" href="{{ "/download" | relLangURL }}">{{ T "nav_download" }}</a>
           <div class="dropdown">
-            <a class="page-link" href="/community">Community</a>
+            <a class="page-link" href="{{ "/community" | relLangURL }}">{{ T "nav_community" }}</a>
             <div class="dropdown-content">
-              <a class="page-link" href="https://discuss.pencil2d.org/">Forum</a>
+              <a class="page-link" href="https://discuss.pencil2d.org/">{{ T "nav_forum" }}</a>
               <a class="page-link" href="https://www.facebook.com/groups/709024775972087/">Facebook</a>
               <a class="page-link" href="https://discord.gg/8FxdV2g">Discord</a>
               <a class="page-link" href="https://www.youtube.com/channel/UCexMjl4rq8OyzAc7C03uKCQ/playlists">Youtube</a>
               <a class="page-link" href="https://pencil2d-software.tumblr.com/">Tumblr</a>
             </div>
           </div>
-          <a class="page-link" href="/news.html">News</a>
+          <a class="page-link" href="{{ "/news.html" | relLangURL }}">{{ T "nav_news" }}</a>
           <div class="dropdown">
-            <a class="page-link" href="/doc">Docs</a>
+            <a class="page-link" href="{{ "/doc" | relLangURL }}">{{ T "nav_docs" }}</a>
             <div class="dropdown-content">
-              <a class="page-link" href="/doc/tutorials.html">Tutorials</a>
-              <a class="page-link" href="/doc/faq.html">FAQ</a>
-              <a class="page-link" href="/doc/manual/">User's Manual</a>
-              <a class="page-link" href="/doc/course/">Classroom Course</a>
+              <a class="page-link" href="{{ "/doc/tutorials.html" | relLangURL }}">{{ T "nav_tutorials" }}</a>
+              <a class="page-link" href="{{ "/doc/faq.html" | relLangURL }}">{{ T "nav_faq" }}</a>
+              <a class="page-link" href="{{ "/doc/manual/" | relLangURL }}">{{ T "nav_manual" }}</a>
+              <a class="page-link" href="{{ "/doc/course/" | relLangURL }}">{{ T "series_course" }}</a>
             </div>
           </div>
-          <a class="page-link" href="/contribute">Contribute</a>
+          <a class="page-link" href="{{ "/contribute" | relLangURL }}">{{ T "nav_contribute" }}</a>
+          {{- /* The same page in the other language(s); every page exists in each. */}}
+          {{- range .Translations }}
+          <a class="page-link lang-switch" href="{{ .RelPermalink | strings.TrimSuffix "index.html" }}" hreflang="{{ .Language.Locale }}" lang="{{ .Language.Locale }}">{{ .Language.Label }}</a>
+          {{- end }}
         </div>
       </nav>
   </div>

@@ -1,4 +1,5 @@
-{{- $to := partial "canonical.html" .Page -}}
+{{- /* Redirect within the page's own language, to the URL form Jekyll used. */ -}}
+{{- $to := partial "pretty-url.html" .Page -}}
 <!DOCTYPE html>
 <html lang="en-US">
   <meta charset="utf-8">

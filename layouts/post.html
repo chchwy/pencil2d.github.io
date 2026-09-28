@@ -2,7 +2,7 @@
 <article itemscope itemtype="http://schema.org/BlogPosting">
 
   <div itemprop="articleBody" class="post-content">
-    {{ .Content }}
+    {{ partial "content.html" . }}
   </div>
 
   {{ if eq .Params.comments true }}{{ partial "comments.html" . }}{{ end }}

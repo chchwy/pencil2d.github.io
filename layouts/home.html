@@ -1,8 +1,8 @@
 {{ define "main" }}
 <div>
-  {{ .Content }}
+  {{ partial "content.html" . }}
 
-  <h3>Latest News</h3>
+  <h3>{{ T "home_latest_news" }}</h3>
   <ul class="home-post-list">
     {{- range first 5 (partial "posts.html" .) }}
       <li>
@@ -11,13 +11,13 @@
       </li>
     {{- end }}
     <li>
-      <a class="home-post-link" href="/news.html">More News...</a>
+      <a class="home-post-link" href="{{ "/news.html" | relLangURL }}">{{ T "home_more_news" }}</a>
     </li>
   </ul>
 
   <br/>
 
-  <h3>User Showreel</h3>
+  <h3>{{ T "home_showreel" }}</h3>
   <div>
     <iframe class="showreel" src="https://www.youtube.com/embed/ma52j9B1kEM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
   </div>
